@@ -120,12 +120,10 @@ Setting up Netlify is simple and only requires you to do a few steps.
 You need to allow the Netlify App/Bot to have access to your repository.
 
 ### Create files
-You need to create a `requirements.txt` and `runtime.txt` file in order to make Netlify work properly with your setup.
+This repository already ships with a `requirements.txt` and `runtime.txt` which makes sure that Netlify uses the right Python version and also downloads the required dependencies.  
+By default does Netlify use an outdated version of Python, which is also no longer supported (Don't ask me why they do that...) and the `runtime.txt` forces Netlify to use Python 3.7.
 
-The requirements.txt needs to have `mkdocs-material>=5.0.0` set as content and the `runtime.txt` needs `3.7` to be set.  
-This is because Netlify uses an outdated and no longer supported version of Python by default and therefore needs to be changed.
-
-After that, just setup netlify on their website and you should be good to go.
+After the above steps can you just setup netlify on their website and you're good to go.
 
 ## Credits
 A big thank you goes to the following people/groups:
