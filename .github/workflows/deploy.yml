@@ -11,7 +11,7 @@ on:
   push:
     paths: 
     - 'docs/**'
-    - '**.yml'
+    - 'mkdocs.yml'
     - 'theme/**'
     branches:
     - master
