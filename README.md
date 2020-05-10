@@ -9,6 +9,8 @@
 [facelessuser]: https://github.com/facelessuser
 [PyMdown Extensions]: https://github.com/facelessuser/pymdown-extensions/
 
+[Netlify]: https://netlify.com
+
 [extra.css]: https://github.com/Andre601/wiki-template/tree/master/docs/assets/css/extra.css
 [tabbed.css]: https://github.com/Andre601/wiki-template/tree/master/docs/assets/css/extensions/tabbed.css
 [mkdocs.yml]: https://github.com/Andre601/wiki-template/tree/master/mkdocs.yml
@@ -62,11 +64,10 @@ You can call the page `index.md` to make it the default page of a folder.
 If, for example, the wiki is hosted under `Andre601.github.io/wiki-template` and you create `docs/about/index.md` will the content of the index.md be shown when connecting to `Andre601.github.io/wiki-template/about`
 
 ### Setup GitHub Actions
-It's recommendet to use GitHub Actions for automatic publishing of the pages on GitHub Pages.  
-To do that, first create a file called `requirements.txt` and add the following content to it.  
-```txt
-mkdocs-material>=5.0.0
-```
+It's recommendet to use GitHub Actions for automatic publishing of the pages on GitHub Pages.
+
+This repo already ships with a `requirements.txt` which is needed for the below action to work properly.  
+If you alter the action and use additional dependencies, can you just add them to the aformentioned file to automatically download it.
 
 Next, create a yml file in the `.github/workflows` directory and add the following content to it:  
 ```yaml
@@ -93,19 +94,19 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip setuptools
-        python -m pip install -r requirements.txt
+        python -m pip install -r requirements.txt # The requirements.txt has to exist for this to work.
     - name: Deploy Files
       run: |
         git config user.name "github-actions[bot]"
         git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-        git remote add gh-token "https://${{ secrets.GH_TOKEN}}@github.com/purrbot-site/Docs.git"
+        git remote add gh-token "https://${{ secrets.GH_TOKEN}}@github.com/:user/:repo.git"
         git fetch gh-token && git fetch gh-token gh-pages:gh-pages
         python -m mkdocs gh-deploy --clean -m "Your commit message (optional)" --remote-name gh-token
         git push gh-token gh-pages
 ```
 
-The above setup will checkout the code, setup Python 3.7, install all required dependencies and then push the changes to the GitHub Pages branch using MkDocs' `gh-deploy` command and also using the GitHub Actions account for it.  
-Note that you need to setup a Personal Access Token (PAT) and set it as Secret with the name `GH_TOKEN` for the repository.
+It's important to point out, that you need to replace `:user` and `:repo` with your user/organisation name and `:repo` with the repository name.  
+Additionally will you need to create a Personal Access Token (PAT) and save it as a Secret called `GH_TOKEN`
 
 The Action should now trigger every time you push changes to any .yml file or towards the `docs` or `theme directory`.
 
