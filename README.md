@@ -65,53 +65,16 @@ You can call the page `index.md` to make it the default page of a folder.
 If, for example, the wiki is hosted under `Andre601.github.io/mkdocs-template` and you create `docs/about/index.md` will the content of the index.md be shown when connecting to `Andre601.github.io/mkdocs-template/about`
 
 ### Setup GitHub Actions
-It's recommendet to use GitHub Actions for automatic publishing of the pages on GitHub Pages.  
-However, before you setup Actions, make sure to have the `gh-pages` branch created/set up first or there might be issues on your first run.  
-You may also need to manually activate the GitHub Pages, as GitHub (in combination with actions) can act a bit weird and not automatically activate GitHub Pages when a `gh-pages` branch was created.
+> ***Requirements**:  
+> - A Personal Access Token (PAT) with `repo` scope created and saved as `GH_TOKEN` Secret in your repository's "Secrets" setting.
+> - `gh-pages` branch setup. Easiest way would be to clone your repository locally and make an initial `gh-deploy` using MkDocs.
 
-This repo already ships with a `requirements.txt` which is needed for the below action to work properly.  
+This repo already ships with a `deploy.yml` file inside the `.github/workflows` directory and a `requirements.txt` which is needed for the GitHub action to work properly.  
 If you alter the action and use additional dependencies, can you just add them to the aformentioned file to automatically download it.
 
-Next, create a yml file in the `.github/workflows` directory and add the following content to it:  
-```yaml
-name: Deploy Site
+It's important to point out, that in the GitHub Action file you need to replace `Andre601` and `mkdocs-template` with your user/organisation name and the repository name respectively.
 
-on:
-  push:
-    paths: 
-    - 'docs/**'
-    - '**.yml'
-    - 'theme/**'
-    branches:
-    - master
-
-jobs:
-  build:
-    runs-on: [ubuntu-latest]
-    steps:
-    - uses: actions/checkout@v2
-    - name: Set up Python 3.7
-      uses: actions/setup-python@v1
-      with:
-        python-version: 3.7
-    - name: Install dependencies
-      run: |
-        python -m pip install --upgrade pip setuptools
-        python -m pip install -r requirements.txt # The requirements.txt has to exist for this to work.
-    - name: Deploy Files
-      run: |
-        git config user.name "github-actions[bot]"
-        git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-        git remote add gh-token "https://${{ secrets.GH_TOKEN}}@github.com/:user/:repo.git"
-        git fetch gh-token && git fetch gh-token gh-pages:gh-pages
-        python -m mkdocs gh-deploy --clean -m "Your commit message (optional)" --remote-name gh-token
-        git push gh-token gh-pages
-```
-
-It's important to point out, that you need to replace `:user` and `:repo` with your user/organisation name and `:repo` with the repository name.  
-Additionally will you need to create a Personal Access Token (PAT) and save it as a Secret called `GH_TOKEN`
-
-The Action should now trigger every time you push changes to any .yml file or towards the `docs` or `theme directory`.
+The Action should now trigger every time you push changes to any .yml file or towards the `docs` or `theme` directory.
 
 ## Using Netlify
 You may want to use [Netlify] to deploy changes or make previews of Pull Requests.
