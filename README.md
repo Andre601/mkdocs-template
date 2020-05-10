@@ -58,7 +58,7 @@ First clone this repository by clicking on the "Use this Template" button.
 Give a name for the repository and confirm your action.
 
 ### Setup GitHub Actions
-> ***Requirements**:  
+> **Requirements**:  
 > - A Personal Access Token (PAT) with `repo` scope created and saved as `GH_TOKEN` Secret in your repository's "Secrets" setting.
 > - `gh-pages` branch setup. Easiest way would be to clone your repository locally and make an initial `gh-deploy` using MkDocs.
 
