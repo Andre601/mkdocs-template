@@ -34,4 +34,3 @@ jobs:
         git config user.name "github-actions[bot]"
         git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
         python -m mkdocs gh-deploy --clean -m "Deployed Wiki (${GITHUB_SHA:0:7})"
-        git push gh-token gh-pages
