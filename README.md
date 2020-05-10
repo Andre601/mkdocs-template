@@ -11,10 +11,11 @@
 
 [Netlify]: https://netlify.com
 
-[extra.css]: https://github.com/Andre601/wiki-template/tree/master/docs/assets/css/extra.css
-[tabbed.css]: https://github.com/Andre601/wiki-template/tree/master/docs/assets/css/extensions/tabbed.css
-[mkdocs.yml]: https://github.com/Andre601/wiki-template/tree/master/mkdocs.yml
-[LICENSE]: https://github.com/Andre601/wiki-template/tree/master/LICENSE
+[extra.css]: https://github.com/Andre601/wiki-template/blob/master/docs/assets/css/extra.css
+[tabbed.css]: https://github.com/Andre601/wiki-template/blob/master/docs/assets/css/extensions/tabbed.css
+[mkdocs.yml]: https://github.com/Andre601/wiki-template/blob/master/mkdocs.yml
+[main.html]: https://github.com/Andre601/wiki-template/blob/master/theme/main.html
+[LICENSE]: https://github.com/Andre601/wiki-template/blob/master/LICENSE
 
 # MkDocs Material Template
 This is a template repository for anyone that wants to use the MkDocs Material Theme.  
