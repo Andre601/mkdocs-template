@@ -1,4 +1,4 @@
-site_name: Wiki Template
+site_name: MkDocs Template
 site_description: 'A template for future MkDocs wikis'
 site_author: 'Andre_601'
 
@@ -7,8 +7,8 @@ copyright: |
 
 docs_dir: docs/
 
-repo_name: Andre601/Wiki-Template
-repo_url: https://github.com/Andre601/wiki-template
+repo_name: Andre601/mkdocs-template
+repo_url: https://github.com/Andre601/mkdocs-template
 
 nav:
   - Welcome: index.md
@@ -32,7 +32,7 @@ extra_css:
 extra:
   social:
     - icon: 'fontawesome/brands/github'
-      link: 'https://github.com/Andre601/wiki-template'
+      link: 'https://github.com/Andre601/mkdocs-template'
 
 markdown_extensions:
   - admonition

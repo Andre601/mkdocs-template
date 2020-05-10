@@ -11,11 +11,11 @@
 
 [Netlify]: https://netlify.com
 
-[extra.css]: https://github.com/Andre601/wiki-template/blob/master/docs/assets/css/extra.css
-[tabbed.css]: https://github.com/Andre601/wiki-template/blob/master/docs/assets/css/extensions/tabbed.css
-[mkdocs.yml]: https://github.com/Andre601/wiki-template/blob/master/mkdocs.yml
-[main.html]: https://github.com/Andre601/wiki-template/blob/master/theme/main.html
-[LICENSE]: https://github.com/Andre601/wiki-template/blob/master/LICENSE
+[extra.css]: https://github.com/Andre601/mkdocs-template/blob/master/docs/assets/css/extra.css
+[tabbed.css]: https://github.com/Andre601/mkdocs-template/blob/master/docs/assets/css/extensions/tabbed.css
+[mkdocs.yml]: https://github.com/Andre601/mkdocs-template/blob/master/mkdocs.yml
+[main.html]: https://github.com/Andre601/mkdocs-template/blob/master/theme/main.html
+[LICENSE]: https://github.com/Andre601/mkdocs-template/blob/master/LICENSE
 
 # MkDocs Material Template
 This is a template repository for anyone that wants to use the MkDocs Material Theme.  
@@ -62,7 +62,7 @@ Now you can setup the pages. To do that, simply add, edit and/or delete Markdown
 
 Note:  
 You can call the page `index.md` to make it the default page of a folder.  
-If, for example, the wiki is hosted under `Andre601.github.io/wiki-template` and you create `docs/about/index.md` will the content of the index.md be shown when connecting to `Andre601.github.io/wiki-template/about`
+If, for example, the wiki is hosted under `Andre601.github.io/mkdocs-template` and you create `docs/about/index.md` will the content of the index.md be shown when connecting to `Andre601.github.io/mkdocs-template/about`
 
 ### Setup GitHub Actions
 It's recommendet to use GitHub Actions for automatic publishing of the pages on GitHub Pages.
