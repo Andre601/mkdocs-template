@@ -1,17 +1,10 @@
-# Welcome to MkDocs
+# MkDocs Template
+Welcome to the MkDocs Template Documentation.
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
+This is nothing more than a basic page to start using MkDocs!
 
-## Commands
+## Getting started
+To start, clone the Repoitory (Click the "Use this template" button) and edit this file here.  
+You can also just add new files and alter some settings.
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
-
-## Project layout
-
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+More can be found on the [README.md](https://github.com/Andre601/mkdocs-template/blob/master/README.md)
