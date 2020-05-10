@@ -59,7 +59,7 @@ Now you can setup the pages. To do that, simply add, edit and/or delete Markdown
 
 Note:  
 You can call the page `index.md` to make it the default page of a folder.  
-If, for example, the wiki is hosted under `Andre601.github.io/wiki-template` and you create `docs/about/index.md` will the context of the index.md be shown when connecting to `Andre601.github.io/wiki-template/about`
+If, for example, the wiki is hosted under `Andre601.github.io/wiki-template` and you create `docs/about/index.md` will the content of the index.md be shown when connecting to `Andre601.github.io/wiki-template/about`
 
 ### Setup GitHub Actions
 It's recommendet to use GitHub Actions for automatic publishing of the pages on GitHub Pages.  
