@@ -65,7 +65,9 @@ You can call the page `index.md` to make it the default page of a folder.
 If, for example, the wiki is hosted under `Andre601.github.io/mkdocs-template` and you create `docs/about/index.md` will the content of the index.md be shown when connecting to `Andre601.github.io/mkdocs-template/about`
 
 ### Setup GitHub Actions
-It's recommendet to use GitHub Actions for automatic publishing of the pages on GitHub Pages.
+It's recommendet to use GitHub Actions for automatic publishing of the pages on GitHub Pages.  
+However, before you setup Actions, make sure to have the `gh-pages` branch created/set up first or there might be issues on your first run.  
+You may also need to manually activate the GitHub Pages, as GitHub (in combination with actions) can act a bit weird and not automatically activate GitHub Pages when a `gh-pages` branch was created.
 
 This repo already ships with a `requirements.txt` which is needed for the below action to work properly.  
 If you alter the action and use additional dependencies, can you just add them to the aformentioned file to automatically download it.
