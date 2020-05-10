@@ -1,0 +1,52 @@
+site_name: Wiki Template
+site_description: 'A template for future MkDocs wikis'
+site_author: 'Andre_601'
+
+copyright: |
+  &copy; Author
+
+docs_dir: docs/
+
+repo_name: Andre601/Wiki-Template
+repo_url: https://github.com/Andre601/wiki-template
+
+nav:
+  - Welcome: index.md
+
+theme:
+  name: 'material'
+  custom_dir: 'theme'
+  favicon: 'material/library'
+  palette:
+    primary: 'indigo'
+    accent: 'indigo'
+  features:
+  - tabs
+  icon:
+    logo: material/library
+    repo: material/library
+
+extra_css:
+  - 'assets/css/extra.css'
+
+extra:
+  social:
+    - icon: 'fontawesome/brands/github'
+      link: 'https://github.com/Andre601/wiki-template'
+
+markdown_extensions:
+  - admonition
+  - codehilite:
+      guess_lang: false
+  - toc:
+      permalink: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+  - pymdownx.superfences
+  - pymdownx.tabbed
+  - pymdownx.details
+  - pymdownx.magiclink:
+      repo_url_shortener: true
+      repo_url_shorthand: true
+      social_url_shorthand: true
