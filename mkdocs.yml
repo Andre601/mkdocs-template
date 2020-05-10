@@ -2,32 +2,54 @@ site_name: MkDocs Template
 site_description: 'A template for future MkDocs wikis'
 site_author: 'Andre_601'
 
+#
+# This section uses normal HTML, so normal HTML tags and specific text like &copy; are supported
 copyright: |
   &copy; Author
 
 docs_dir: docs/
 
+#
+# These three options are optional.
 repo_name: Andre601/mkdocs-template
 repo_url: https://github.com/Andre601/mkdocs-template
+#edit_uri: tree/master/docs # If you want the Edit option/URL to be different.
 
 nav:
   - Welcome: index.md
 
 theme:
   name: 'material'
-  custom_dir: 'theme'
-  favicon: 'material/library'
+  #
+  # Uncomment the below option to use the "theme extension" option
+  # to customize certain aspects of the Material Theme.
+  #
+  #custom_dir: 'theme'
+  #
+  # https://squidfunk.github.io/mkdocs-material/getting-started/#favicon
+  favicon: 'assets/images/favicon.png'
+  #
+  # https://squidfunk.github.io/mkdocs-material/getting-started/#color-palette
   palette:
     primary: 'indigo'
     accent: 'indigo'
+  #
+  # https://squidfunk.github.io/mkdocs-material/getting-started/#feature-flags
   features:
-  - tabs
+    #- instant
+    - tabs
+  #
+  # https://squidfunk.github.io/mkdocs-material/getting-started/#icons
   icon:
-    logo: material/library
-    repo: material/library
+    logo: 'material/library'
+    repo: 'material/library'
 
-extra_css:
-  - 'assets/css/extra.css'
+#
+# You can uncomment this line together with one of the below lines to add custom CSS to the documentation.
+#extra_css:
+#  - 'assets/css/extra.css' # Uncomment this line if you want to use both dark theme and the tabbed css.
+#  - 'assets/css/styling/dark.css' # Uncomment this line if you only want Dark theme
+#  - 'assets/css/extensions/tabbed.css' # Uncomment this line if you only want the CSS for tabbed
 
 extra:
   social:
@@ -35,18 +57,39 @@ extra:
       link: 'https://github.com/Andre601/mkdocs-template'
 
 markdown_extensions:
-  - admonition
-  - codehilite:
+  - markdown.extensions.admonition:
+  - markdown.extensions.codehilite:
       guess_lang: false
-  - toc:
+  - markdown.extensions.toc:
       permalink: true
-  - pymdownx.emoji:
-      emoji_index: !!python/name:materialx.emoji.twemoji
-      emoji_generator: !!python/name:materialx.emoji.to_svg
-  - pymdownx.superfences
-  - pymdownx.tabbed
-  - pymdownx.details
-  - pymdownx.magiclink:
-      repo_url_shortener: true
-      repo_url_shorthand: true
-      social_url_shorthand: true
+  #
+  # Uncomment the PyMdown extension you want to use.
+  # Note that some might need additional settings to be added.
+  #
+  # Refer to the official documentation for more info:
+  # - https://facelessuser.github.io/pymdown-extensions/
+  #
+  #- pymdownx.arithmex:
+  #- pymdownx.b64:
+  #- pymdownx.betterem:
+  #- pymdownx.caret:
+  #- pymdownx.critic:
+  #- pymdownx.details:
+  #- pymdownx.emoji:
+  #- pymdownx.escapeall:
+  #- pymdownx.extra:
+  #- pymdownx.extrarawhtml:
+  #- pymdownx.highlight:
+  #- pymdownx.inlinehilite:
+  #- pymdownx.keys:
+  #- pymdownx.magiclink:
+  #- pymdownx.mark:
+  #- pymdownx.pathconverter:
+  #- pymdownx.progressbar:
+  #- pymdownx.smartsymbols:
+  #- pymdownx.snippets:
+  #- pymdownx.striphtml:
+  #- pymdownx.superfences:
+  #- pymdownx.tabbed: # This extension requires the 'tabbed.css' to be used.
+  #- pymdownx.tasklist:
+  #- pymdownx.tilde:
