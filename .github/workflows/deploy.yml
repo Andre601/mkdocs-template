@@ -33,4 +33,7 @@ jobs:
       run: |
         git config user.name "github-actions[bot]"
         git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-        python -m mkdocs gh-deploy --clean -m "Deployed Wiki (${GITHUB_SHA:0:7})"
+        git remote add gh-token "https://${{ secrets.GH_TOKEN }}@github.com/Andre601/mkdocs-template.git"
+        git fetch gh-token && git fetch gh-token gh-pages:gh-pages
+        python -m mkdocs gh-deploy --clean -m "Deployed Wiki (${GITHUB_SHA:0:7})" --remote-name gh-token
+        git push gh-token gh-pages
