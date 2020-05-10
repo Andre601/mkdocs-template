@@ -57,13 +57,6 @@ If you want to use this template for making documentation using GitHub Pages, fo
 First clone this repository by clicking on the "Use this Template" button.  
 Give a name for the repository and confirm your action.
 
-### Setup pages
-Now you can setup the pages. To do that, simply add, edit and/or delete Markdown files and folders inside the `docs` folder.
-
-Note:  
-You can call the page `index.md` to make it the default page of a folder.  
-If, for example, the wiki is hosted under `Andre601.github.io/mkdocs-template` and you create `docs/about/index.md` will the content of the index.md be shown when connecting to `Andre601.github.io/mkdocs-template/about`
-
 ### Setup GitHub Actions
 > ***Requirements**:  
 > - A Personal Access Token (PAT) with `repo` scope created and saved as `GH_TOKEN` Secret in your repository's "Secrets" setting.
@@ -75,6 +68,15 @@ If you alter the action and use additional dependencies, can you just add them t
 It's important to point out, that in the GitHub Action file you need to replace `Andre601` and `mkdocs-template` with your user/organisation name and the repository name respectively.
 
 The Action should now trigger every time you push changes to any .yml file or towards the `docs` or `theme` directory.
+
+### Change pages
+Now you can setup the pages. To do that, simply add, edit and/or delete Markdown files and folders inside the `docs` folder.
+
+**Tip**:  
+You can call the file `index.md` to make it the default page of a folder.  
+If, for example, the wiki is hosted under `andre601.github.io/mkdocs-template` and you create `docs/about/index.md` will the content of the index.md be shown when connecting to `andre601.github.io/mkdocs-template/about`
+
+Remember to always add the pages to the `nav` section in the `mkdocs.yml` so that MkDocs will display them in the navigation.
 
 ## Using Netlify
 You may want to use [Netlify] to deploy changes or make previews of Pull Requests.
