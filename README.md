@@ -39,7 +39,7 @@ This repository comes packed with the following extensions:
 
 You can add/remove extension at your own discretion, but keep in mind that some extensions either conflict with others, or require additional setups like f.e. the Tabbed extension (Requires the [tabbed.css] file to be used).
 
-### Altered HTML files
+### Altering HTML files
 You can alter specific parts of the documentation by adding html files to the [theme] folder.  
 After you've added the HTML files, make sure to also uncomment the `custom_dir: 'theme'` section of the [mkdocs.yml].
 
@@ -52,11 +52,10 @@ Give a name for the repository and confirm your action.
 
 ### Setup GitHub Actions
 > **Requirements**:  
-> - A Personal Access Token (PAT) with `repo` scope created and saved as `GH_TOKEN` Secret in your repository's "Secrets" setting.
 > - `gh-pages` branch setup. Easiest way would be to clone your repository locally and make an initial `gh-deploy` using MkDocs.
 
 This repo already ships with a `deploy.yml` file inside the `.github/workflows` directory and a `requirements.txt` which is needed for the GitHub action to work properly.  
-If you alter the action and use additional dependencies, can you just add them to the aformentioned txt file to automatically download it.
+If you alter the action and use additional dependencies, can you just add them to the aformentioned txt file to automatically download them.
 
 It's important to point out, that in the GitHub Action file you need to replace `Andre601` and `mkdocs-template` with your user/organisation name and the repository name respectively.
 
