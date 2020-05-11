@@ -52,9 +52,14 @@ theme:
 #  - 'assets/css/extensions/tabbed.css' # Uncomment this line if you only want the CSS for tabbed
 
 extra:
+  #
+  # https://squidfunk.github.io/mkdocs-material/getting-started/#adding-social-links
   social:
     - icon: 'fontawesome/brands/github'
       link: 'https://github.com/Andre601/mkdocs-template'
+  #
+  # https://squidfunk.github.io/mkdocs-material/getting-started/#adding-a-web-app-manifest
+  #manifest: manifest.webmanifest
 
 markdown_extensions:
   - markdown.extensions.admonition:
