@@ -52,7 +52,7 @@ Give a name for the repository and confirm your action.
 
 ### Setup GitHub Actions
 > **Requirements**:  
-> - `gh-pages` branch setup. Easiest way would be to clone your repository locally and make an initial `gh-deploy` using MkDocs.
+> - `gh-pages` branch setup. Easiest way would be to "check" the box for `Include all branches` when using this template.
 
 This repo already ships with a `deploy.yml` file inside the `.github/workflows` directory and a `requirements.txt` which is needed for the GitHub action to work properly.  
 If you alter the action and use additional dependencies, can you just add them to the aformentioned txt file to automatically download them.
