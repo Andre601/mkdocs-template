@@ -1,7 +1,7 @@
 [MkDocs]: https://www.mkdocs.org/
 
 [squidfunk]: https://github.com/squidfunk
-[Material Theme]: https://github.com/squidfunk/mkdocs-material
+[MkDocs Material Theme]: https://github.com/squidfunk/mkdocs-material
 
 [Material Dark Theme]: https://github.com/henrywhitaker3/mkdocs-material-dark-theme
 [henrywhitaker3]: https://github.com/henrywhitaker3
@@ -87,10 +87,10 @@ After the above steps can you just setup netlify on their website and you're goo
 ## Credits
 A big thank you goes to the following people/groups:
 
-[MkDocs] for providing the software, to generate documentation.
-[squidfunk] for the [MkDocs Material Theme].
-[henrywhitaker3] for the [Material Dark Theme]
-[facelessuser] for the [PyMdown Extensions]
+[MkDocs] for providing the software, to generate documentation.  
+[squidfunk] for the [MkDocs Material Theme].  
+[henrywhitaker3] for the [Material Dark Theme].  
+[facelessuser] for the [PyMdown Extensions].  
 
 ## License
 This template is served under the MIT license.  
