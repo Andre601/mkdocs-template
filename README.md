@@ -3,9 +3,6 @@
 [squidfunk]: https://github.com/squidfunk
 [MkDocs Material Theme]: https://github.com/squidfunk/mkdocs-material
 
-[Material Dark Theme]: https://github.com/henrywhitaker3/mkdocs-material-dark-theme
-[henrywhitaker3]: https://github.com/henrywhitaker3
-
 [facelessuser]: https://github.com/facelessuser
 [PyMdown Extensions]: https://github.com/facelessuser/pymdown-extensions/
 
@@ -18,16 +15,9 @@
 [LICENSE]: https://github.com/Andre601/mkdocs-template/blob/master/LICENSE
 
 # MkDocs Material Template
-This is a template repository for anyone that wants to use the MkDocs Material Theme.  
-It also ships with a premade Dark theme and some additional settings that are useful.
+This is a template repository for anyone that wants to use the MkDocs Material Theme.
 
 ## Premade Settings
-
-### Theme
-This repo ships with the [Material Dark Theme] made by [henrywhitaker3].  
-This theme essentially makes the docs appear darker, while keeping things like code-highlighting working.
-
-If you want to use it, uncomment the `extra_css:` section and either `- 'assets/css/styling/dark.css'` or `- 'assets/css/extra.css'` in the [mkdocs.yml].
 
 ### Extensions
 This repository comes packed with the following extensions:
@@ -89,7 +79,6 @@ A big thank you goes to the following people/groups:
 
 [MkDocs] for providing the software, to generate documentation.  
 [squidfunk] for the [MkDocs Material Theme].  
-[henrywhitaker3] for the [Material Dark Theme].  
 [facelessuser] for the [PyMdown Extensions].  
 
 ## License
