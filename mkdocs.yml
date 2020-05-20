@@ -31,6 +31,8 @@ theme:
   #
   # https://squidfunk.github.io/mkdocs-material/getting-started/#color-palette
   palette:
+    # Uncomment this option, if you want to use the dark theme of MkDocs-Material.
+    #scheme: 'slate'
     primary: 'indigo'
     accent: 'indigo'
   #
@@ -48,7 +50,6 @@ theme:
 # You can uncomment this line together with one of the below lines to add custom CSS to the documentation.
 #extra_css:
 #  - 'assets/css/extra.css' # Uncomment this line if you want to use both dark theme and the tabbed css.
-#  - 'assets/css/styling/dark.css' # Uncomment this line if you only want Dark theme
 #  - 'assets/css/extensions/tabbed.css' # Uncomment this line if you only want the CSS for tabbed
 
 extra:
