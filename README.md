@@ -40,9 +40,11 @@ If you want to use this template for making documentation using GitHub Pages, fo
 First clone this repository by clicking on the "Use this template" button.  
 Give a name for the repository and confirm your action.
 
+It's recommendet to check `Include all branches` to already have a `gh-pages` branch set up and ready (required for the next step)
+
 ### Setup GitHub Actions
 > **Requirements**:  
-> - `gh-pages` branch setup. Easiest way would be to "check" the box for `Include all branches` when using this template.
+> - `gh-pages` branch setup. Easiest way would be to follow the above recommendation when copying this template.
 
 This repo already ships with a `deploy.yml` file inside the `.github/workflows` directory and a `requirements.txt` which is needed for the GitHub action to work properly.  
 If you alter the action and use additional dependencies, can you just add them to the aformentioned txt file to automatically download them.
@@ -54,9 +56,9 @@ The Action should now trigger every time you push changes to the mkdocs.yml file
 ### Change pages
 Now you can setup the pages. To do that, simply add, edit and/or delete Markdown files and folders inside the `docs` folder.
 
-**Tip**:  
-You can call the file `index.md` to make it the default page of a folder.  
-If, for example, the wiki is hosted under `andre601.github.io/mkdocs-template` and you create `docs/about/index.md` will the content of the index.md be shown when connecting to `andre601.github.io/mkdocs-template/about`
+> **Tip**:  
+> You can call the file `index.md` to make it the default page of a folder.  
+> If, for example, the wiki is hosted under `andre601.github.io/mkdocs-template` and you create `docs/about/index.md` will the content of the index.md be shown when connecting to `andre601.github.io/mkdocs-template/about`
 
 Remember to always add the pages to the `nav` section in the `mkdocs.yml` so that MkDocs will display them in the navigation.
 
@@ -77,9 +79,9 @@ After the above steps can you just setup netlify on their website and you're goo
 ## Credits
 A big thank you goes to the following people/groups:
 
-[MkDocs] for providing the software, to generate documentation.  
-[squidfunk] for the [MkDocs Material Theme].  
-[facelessuser] for the [PyMdown Extensions].  
+- [MkDocs] for providing the software, to generate documentation.
+- [squidfunk] for the [MkDocs Material Theme].
+- [facelessuser] for the [PyMdown Extensions].
 
 ## License
 This template is served under the MIT license.  
