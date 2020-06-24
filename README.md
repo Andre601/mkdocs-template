@@ -33,6 +33,10 @@ You can add/remove extension at your own discretion, but keep in mind that some 
 You can alter specific parts of the documentation by adding html files to the [theme] folder.  
 After you've added the HTML files, make sure to also uncomment the `custom_dir: 'theme'` section of the [mkdocs.yml].
 
+### Dependabot
+The repository contains a `dependabot.yml` file inside the `.github` which allows automatic updates through GitHub's Dependabot.  
+It is configured to target both Python dependencies (inside the `requirements.txt`) and GitHub-Actions dependencies, to make sure bot are updated accordingly.
+
 ## Use on GitHub
 If you want to use this template for making documentation using GitHub Pages, follow this small tutorial:
 
