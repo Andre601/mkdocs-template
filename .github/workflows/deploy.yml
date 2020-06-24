@@ -3,6 +3,10 @@
 # to the GitHub Pages (gh_pages) branch.
 #
 # Remember to have a requirements.txt file with the required dependencies.
+# This template ships with one by default.
+#
+# It is also recommendet to also copy the template with all branches, to
+# have the gh-pages branch pre-made. This prevents possible errors.
 #
 name: Deploy Site
 
