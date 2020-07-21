@@ -23,4 +23,4 @@ updates:
       interval: "daily"
     labels:
     - 'Type: Update (Dependency)'
-    - 'Target: GitHub-Actions'
+    - 'Target: GitHub Actions'
