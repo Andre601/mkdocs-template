@@ -25,7 +25,7 @@ On the new screen, give your repository a name and make sure to check `Include a
 To create new pages, just add new markdown files to the [docs folder] of the repository and edit them.  
 MkDocs will then turn those into static HTML pages once you [build](#build-pages) or [deploy](#deploy-to-github) the pages.
 
-The template also has some pre-made settings for you to help you with creating documentation much easier.  
+The template also has some pre-made settings for your convenience to help you with creating documentation much easier.  
 In the [mkdocs.yml] will you find many settings that you can alter. Please check the comments and the links they have for more info.
 
 It also contains some extensions that might be useful including:
@@ -35,7 +35,8 @@ It also contains some extensions that might be useful including:
 - ToC
 - [PyMdown Extensions]
 
-You're free to add, edit or remove any extension at your own discretion, but keep in mind that some expansions might caus compatibility issues with others.
+You're free to add, edit or remove any extension at your own discretion, but keep in mind that some expansions might cause compatibility issues with others or require to be downloaded first.  
+For that, alter the `requirements.txt` if you also deploy pages using GitHub Actions ot [Netlify](#netlify)
 
 ## Build Pages
 To build pages (locally) can you use the `mkdocs build` command in your prefered command prompt.  
@@ -59,6 +60,13 @@ Netlify is an amazing service to build and deploy pages. This template comes wit
 
 For more information, please check out their website.
 
+## Dependabot
+The repository contains a `dependabot.yml` file inside the `.github` folder which allows automatic updates through GitHub's Dependabot.  
+It is configured to target both Python dependencies (inside the `requirements.txt`) and GitHub Actions dependencies, to make sure bot are updated accordingly.
+
+Note that it is configured by default to add the `Type: Update (Dependency)` label and also the `Target: Python (pip)` label for Python and `Target: GitHub Actions` label for GitHub Actions Dependencies.  
+Those labels don't exist by default so you have to either create them, or alter the ones in the dependabot.yml (You can also just remove the `labels` sections).
+
 ## Troubleshooting
 > **The deploy action gives me an error when deploying. What is the issue?**
 
@@ -66,15 +74,9 @@ There can be many issues but the most common ones are that you either don't have
 
 > **Can I alter the overall style of the pages?**
 
-Yes. Material for MkDocs supports Theme extensions, meaning you can override specific parts of a theme by providing the particula file in a folder and defining this folder as the `custom_dir` one in the [mkdocs.yml].  
+Yes. Material for MkDocs supports Theme extensions, meaning you can override specific parts of a theme by providing the particular file in a folder and defining this folder as the `custom_dir` one in the [mkdocs.yml].  
 This template ships with a `theme` folder that can be used for that and you can just uncomment the aforementioned line in the YAML file.
 
-## Dependabot
-The repository contains a `dependabot.yml` file inside the `.github` folder which allows automatic updates through GitHub's Dependabot.  
-It is configured to target both Python dependencies (inside the `requirements.txt`) and GitHub Actions dependencies, to make sure bot are updated accordingly.
-
-Note that it is configured by default to add the `Type: Update (Dependency)` label and also the `Target: Python (pip)` label for Python and `Target: GitHub Actions` label for GitHub Actions Dependencies.  
-Those labels don't exist by default so you have to either create them, or alter the ones in the dependabot.yml (You can also just remove the `labels` sections).
 
 ## Credits
 A big thank you goes to the following people/groups:
