@@ -14,12 +14,18 @@
 
 [LICENSE]: https://github.com/Andre601/mkdocs-template/blob/master/LICENSE
 
+[gh-pages]: https://docs.github.com/en/free-pro-team@latest/github/working-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site
+
 # MkDocs Material Template
 This is a template repository for anyone that wants to use the MkDocs Material Theme.
 
 ## Getting Started
 To get started, first clone this template by clicking on the Green button labeled `Use this template`.  
 On the new screen, give your repository a name and make sure to check `Include all branches`. This will make sure that the `gh-pages` branch is included, or otherwhise publishing the docs to GitHub Pages could cause errors (See [Troubleshooting](#troubleshooting)).
+
+> **Note**:  
+> GitHub changed how you define from where it takes the pages to build. You are now able to define both a branch and a specific folder from where GitHub would take the files to then deploy them on GitHub Pages.  
+> You can read more about this [here][gh-pages].
 
 ### Creating pages
 To create new pages, just add new markdown files to the [docs folder] of the repository and edit them.  
