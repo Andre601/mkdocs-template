@@ -140,8 +140,8 @@ theme:
   # - https://squidfunk.github.io/mkdocs-material/setup/setting-up-navigation/
   #
   features:
-    #- instant # This is an experimental feature.
-    - tabs
+    #- navigation.instant # This is an experimental feature.
+    - navigation.tabs
   #
   # You can either use one of MkDocs Material's icon sets that are shiped with it (font awesome,
   # material icons and Octicons) or define a relative path to a SVG or image file.
