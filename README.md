@@ -42,7 +42,7 @@ It also contains some extensions that might be useful including:
 - [PyMdown Extensions]
 
 You're free to add, edit or remove any extension at your own discretion, but keep in mind that some expansions might cause compatibility issues with others or require to be downloaded first.  
-For that, alter the `requirements.txt` if you also deploy pages using GitHub Actions ot [Netlify](#netlify)
+For that, alter the `requirements.txt` if you also deploy pages using GitHub Actions or [Netlify](#netlify)
 
 ## Build Pages
 To build pages (locally) can you use the `mkdocs build` command in your prefered command prompt.  
