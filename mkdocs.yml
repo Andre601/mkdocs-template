@@ -323,6 +323,7 @@ theme:
   # +------------------------------------------------------------------------------------------------------+
   # |                                                                                                      |
   # | The "admonition" option allows you to set a different icon for each admonition type.                 |
+  # | This features is currently only available as part of "Material for MkDocs Insiders".                 |
   # |                                                                                                      |
   # | Supported are all bundled icons:                                                                     |
   # | - FontAwesome                                                                                        |
@@ -337,7 +338,7 @@ theme:
   # | You can also create and use your own icons. See the documentation for more information.              |
   # |                                                                                                      |
   # | Read More:                                                                                           |
-  # | - [TODO] Add Docs link once available                                                                |
+  # | - https://squidfunk.github.io/mkdocs-material/reference/admonitions/#changing-the-icons              |
   # |                                                                                                      |
   # +------------------------------------------------------------------------------------------------------+
   #admonition:
