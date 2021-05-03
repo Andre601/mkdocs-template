@@ -160,7 +160,6 @@ theme:
   # |                                                                                                      |
   # | You can also define multiple palettes that can have different Color Schemses and primary and/or      |
   # | secondary Colors.                                                                                    |
-  # | This Feature is currently Insiders only (16th Mar. 2021)                                             |
   # |                                                                                                      |
   # | Read More:                                                                                           |
   # | - https://squidfunk.github.io/mkdocs-material/setup/changing-the-colors/                             |
@@ -258,8 +257,10 @@ theme:
   # | Features are in the format <category>.<name>. As an example, the feature to enable tabs is called    |
   # | navigation.tabs.                                                                                     |
   # |                                                                                                      |
-  # | The list below contains all known features of Material. Note that some are currently only available  |
-  # | to Insiders and are marked with a * (Last updated: 16th Mar. 2021)                                   |
+  # | The list below contains all known features of Material.                                              |
+  # |                                                                                                      |
+  # | Features marked with a * are currently Insiders-only. (Last update: 4th May 2021)                    |
+  # | https://squidfunk.github.io/mkdocs-material/insiders/                                                |
   # |                                                                                                      |
   # | Read More:                                                                                           |
   # | - https://squidfunk.github.io/mkdocs-material/setup/setting-up-navigation/                           |
@@ -278,7 +279,7 @@ theme:
   #- navigation.sections    # Render top sections as groups.
   - navigation.tabs         # Render top sections as tabs at the top.
   #- navigation.tabs.sticky # Always show tabs.*
-  #- navigation.top         # Adds a "Back to top" button in the corner.*
+  #- navigation.top         # Adds a "Back to top" button in the corner.
   #- navigation.tracking    # Updates the url with highlighted section anchor.*
   
   # Search
@@ -323,7 +324,9 @@ theme:
   # +------------------------------------------------------------------------------------------------------+
   # |                                                                                                      |
   # | The "admonition" option allows you to set a different icon for each admonition type.                 |
-  # | This features is currently only available as part of "Material for MkDocs Insiders".                 |
+  # |                                                                                                      |
+  # | This is currently a Insiders-only feature. (Last update: 4th May 2021)                               |
+  # | https://squidfunk.github.io/mkdocs-material/insiders/                                                |
   # |                                                                                                      |
   # | Supported are all bundled icons:                                                                     |
   # | - FontAwesome                                                                                        |
