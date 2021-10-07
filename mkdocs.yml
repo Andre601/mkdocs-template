@@ -259,7 +259,7 @@ theme:
   # |                                                                                                      |
   # | The list below contains all known features of Material.                                              |
   # |                                                                                                      |
-  # | Features marked with a * are currently Insiders-only. (Last update: 4th May 2021)                    |
+  # | Features marked with a * are currently Insiders-only. (Last update: 7th October 2021)                |
   # | https://squidfunk.github.io/mkdocs-material/insiders/                                                |
   # |                                                                                                      |
   # | Read More:                                                                                           |
@@ -275,10 +275,10 @@ theme:
   #
   #- navigation.expand      # Expand all collapsible sections.
   #- navigation.instant     # Instant loading pages.
-  #- navigation.indexes     # Attach pages directly to Sections.*
+  #- navigation.indexes     # Attach pages directly to Sections.
   #- navigation.sections    # Render top sections as groups.
   - navigation.tabs         # Render top sections as tabs at the top.
-  #- navigation.tabs.sticky # Always show tabs.*
+  #- navigation.tabs.sticky # Always show tabs.
   #- navigation.top         # Adds a "Back to top" button in the corner.
   #- navigation.tracking    # Updates the url with highlighted section anchor.*
   
@@ -307,7 +307,7 @@ theme:
   # |                                                                                                      |
   # | - Material Design Icons: material/... (https://materialdesignicons.com/)                             |
   # |                                                                                                      |
-  # | - Octicons: octicons/... (https://octicons-primer.vercel.app/octicons/)                              |
+  # | - Octicons: octicons/... (https://primer.style/octicons/)                                            |
   # |                                                                                                      |
   # | You can also define your own Image for the logo. To do that, remove the "logo" option from "icon"    |
   # | instead add a "logo" option on the same level as the "icon" one, where you then set the path         |
@@ -325,7 +325,7 @@ theme:
   # |                                                                                                      |
   # | The "admonition" option allows you to set a different icon for each admonition type.                 |
   # |                                                                                                      |
-  # | This is currently a Insiders-only feature. (Last update: 4th May 2021)                               |
+  # | This is currently a Insiders-only feature. (Last update: 7th October 2021)                           |
   # | https://squidfunk.github.io/mkdocs-material/insiders/                                                |
   # |                                                                                                      |
   # | Supported are all bundled icons:                                                                     |
@@ -336,7 +336,7 @@ theme:
   # |                                                                                                      |
   # | - Material Design Icons: material/... (https://materialdesignicons.com/)                             |
   # |                                                                                                      |
-  # | - Octicons: octicons/... (https://octicons-primer.vercel.app/octicons/)                              |
+  # | - Octicons: octicons/... (https://primer.style/octicons/)                                            |
   # |                                                                                                      |
   # | You can also create and use your own icons. See the documentation for more information.              |
   # |                                                                                                      |
@@ -390,7 +390,7 @@ theme:
 # | Material uses this section for different custom settings that wouldn't fit in the theme section.       |
 # |                                                                                                        |
 # | Read More:                                                                                             |
-# | - https://www.mkdocs.org/user-guide/configuration/#extra |
+# | - https://www.mkdocs.org/user-guide/configuration/#extra                                               |
 # |                                                                                                        |
 # +--------------------------------------------------------------------------------------------------------+
 extra:
