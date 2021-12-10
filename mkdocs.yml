@@ -259,7 +259,7 @@ theme:
   # |                                                                                                      |
   # | The list below contains all known features of Material.                                              |
   # |                                                                                                      |
-  # | Features marked with a * are currently Insiders-only. (Last update: 7th October 2021)                |
+  # | Features marked with a * are currently Insiders-only. (Last update: 11th December 2021)              |
   # | https://squidfunk.github.io/mkdocs-material/insiders/                                                |
   # |                                                                                                      |
   # | Read More:                                                                                           |
@@ -267,20 +267,24 @@ theme:
   # |                                                                                                      |
   # +------------------------------------------------------------------------------------------------------+
   features:
+  # Announce
+  #
+  #- announce.dismiss # Adds a "X" button to dismiss a news banner/mark it as read.*
+  
   # Header
   #
   #- header.autohide # Hide header when user scrolls past a specific point.
   
   # Navigation:
   #
-  #- navigation.expand      # Expand all collapsible sections.
+  #- navigation.expand      # Expand all collapsable sections.
   #- navigation.instant     # Instant loading pages.
-  #- navigation.indexes     # Attach pages directly to Sections.
+  #- navigation.indexes     # Attach pages directly to Sections. Incompatible with "toc.integrate"
   #- navigation.sections    # Render top sections as groups.
   - navigation.tabs         # Render top sections as tabs at the top.
-  #- navigation.tabs.sticky # Always show tabs.
-  #- navigation.top         # Adds a "Back to top" button in the corner.
-  #- navigation.tracking    # Updates the url with highlighted section anchor.*
+  #- navigation.tabs.sticky # Tabs won't disappear when scrolling down. Requires "navigation.tabs".
+  #- navigation.top         # Adds a "Back to top" that is shown when scrolling up.
+  #- navigation.tracking    # Updates the url with highlighted section anchor.
   
   # Search
   #
@@ -414,6 +418,17 @@ extra:
   
   # +------------------------------------------------------------------------------------------------------+
   # |                                                                                                      |
+  # | Allows you to hide the "Made with Material for MkDocs" text in the footer of the pages by setting    |
+  # | this to "true".                                                                                      |
+  # |                                                                                                      |
+  # | Read More:                                                                                           |
+  # | - https://squidfunk.github.io/mkdocs-material/setup/setting-up-the-footer/#generator-notice          |
+  # |                                                                                                      |
+  # +------------------------------------------------------------------------------------------------------+
+  #generator: true
+  
+  # +------------------------------------------------------------------------------------------------------+
+  # |                                                                                                      |
   # | The "manifest" option allows you to define a .manifest file to use.                                  |
   # |                                                                                                      |
   # | A .manifest file makes the doc act like a web-application and tells it how to behave when installed. |
@@ -423,18 +438,6 @@ extra:
   # |                                                                                                      |
   # +------------------------------------------------------------------------------------------------------+
   #manifest: manifest.webmanifest
-  
-  # +------------------------------------------------------------------------------------------------------+
-  # |                                                                                                      |
-  # | The "disqus" option allows you to add a comment-system to the pages using Disqus.                    |
-  # |                                                                                                      |
-  # | Setup Guide: https://github.com/squidfunk/mkdocs-material/discussions/2138#discussioncomment-250454  |
-  # |                                                                                                      |
-  # | Read More:                                                                                           |
-  # | - https://squidfunk.github.io/mkdocs-material/setup/adding-a-comment-system/                         |
-  # |                                                                                                      |
-  # +------------------------------------------------------------------------------------------------------+
-  #disqus: 'name'
   
   # +------------------------------------------------------------------------------------------------------+
   # |                                                                                                      |
@@ -451,7 +454,6 @@ extra:
   # +------------------------------------------------------------------------------------------------------+
   #alternate:
 
-
 # +--------------------------------------------------------------------------------------------------------+
 # |                                                                                                        |
 # | MkDocs allows the usage of Markdown extensions which can do various things.                            |
@@ -461,6 +463,9 @@ extra:
 # | Note that some extensions may use specific settings that you need to set.                              |
 # | Please check out the official documentation of PyMdownx for more information:                          |
 # | https://facelessuser.github.io/pymdown-extensions/                                                     |
+# |                                                                                                        |
+# | Material already provides required CSS and JS values for the PyMdownX Extensions, which means you do   |
+# | not need to set them up yourself.                                                                      |
 # |                                                                                                        |
 # | Read More:                                                                                             |
 # | - https://www.mkdocs.org/user-guide/configuration/#markdown_extensions                                 |
