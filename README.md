@@ -25,7 +25,7 @@ This is a template repository for anyone that wants to use the MkDocs Material T
 To get started, first clone this template by clicking on the Green button labeled [`Use this template`][use].  
 On the new screen, give your repository a name and make sure to check `Include all branches`. This will make sure that the `gh-pages` branch is included, or otherwhise publishing the docs to GitHub Pages could cause errors (See [Troubleshooting](#troubleshooting)).
 
-> **Note**:  
+> **Note**  
 > GitHub changed how you define from where it takes the pages to build. You are now able to define both a branch and a specific folder from where GitHub would take the files to then deploy them on GitHub Pages.  
 > You can read more about this [here][gh-pages].
 
