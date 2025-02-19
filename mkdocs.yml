@@ -1,503 +1,243 @@
-# +--------------------------------------------------------------------------------------------------------+
-# |                                                                                                        |
-# | This is the main file used by MkDocs to build the pages.                                               |
-# | It contains a lot of information and settings for you to read and use.                                 |
-# | Comments may contain "Read More" URLs to more in-depth documentation about the option for you to read. |
-# |                                                                                                        |
-# | You can check out https://www.mkdocs.org/user-guide/configuration/ for a more detailed explanation of  |
-# | all the options MkDocs offers by default.                                                              |
-# |                                                                                                        |
-# +------------------------------------------------- NOTE -------------------------------------------------+
-# |                                                                                                        |
-# | Some of the options listed here are only available through the usage of Material for MkDocs.           |
-# | Those options will usually have a link to the docs of this Theme and also mention "Material" as name.  |
-# | The actual name of the theme is "Material for MkDocs" and "Material" is used for simplicity reasons.   |
-# |                                                                                                        |
-# +--------------------------------------------------------------------------------------------------------+
+# +----------------------------------------------------------------------------------------------------+
+# |                                                                                                    |
+# | This is the main configuration file used by MkDocs to generate the documentation from Markdown     |
+# | files.                                                                                             |
+# | It contains a lot of configuration options but at its core is only the 'site_name' option required |
+# | with every other option being optional.                                                            |
+# |                                                                                                    |
+# |----------------------------------------------- NOTE -----------------------------------------------|
+# |                                                                                                    |
+# | While this configuration file contains a lot of comments will not all options be explained in      |
+# | detail.                                                                                            |
+# | Instead will you often find "Read More" links pointing to the official documentation of MkDocs     |
+# | to allow further reading on these settings.                                                        |
+# |                                                                                                    |
+# | Also, this file will ONLY cover MkDocs itself. For a configuration example using the Material for  |
+# | MkDocs theme, check the "material.yml" file, which inherits from this file itself.                 |
+# | Options are categorized and listed in order of appearance within MkDocs' Configuration doc page.   |
+# |                                                                                                    |
+# |-------------------------------------------- DISCLAIMER --------------------------------------------|
+# |                                                                                                    |
+# | I do not guarantee for these files to be up-to-date nor maintained. Please make sure to first      |
+# | check for any major changes introduced by MkDocs or any of the themes, extensions or plugins used. |
+# |                                                                                                    |
+# | File last updated: 27th of Sep 2023                                                                |
+# |                                                                                                    |
+# +----------------------------------------------------------------------------------------------------+
 
-# +--------------------------------------------------------------------------------------------------------+
-# |                                                                                                        |
-# | Main Page Settings for MkDocs.                                                                         |
-# | Those settings are site name, site description, Site author and also Site URL (Canonical URL)          |
-# |                                                                                                        |
-# | Read More:                                                                                             |
-# | - https://www.mkdocs.org/user-guide/configuration/#site_name                                           |
-# | - https://www.mkdocs.org/user-guide/configuration/#site_description                                    |
-# | - https://www.mkdocs.org/user-guide/configuration/#site_author                                         |
-# | - https://www.mkdocs.org/user-guide/configuration/#site_url                                            |
-# |                                                                                                        |
-# +--------------------------------------------------------------------------------------------------------+
-site_name: MkDocs Template
-site_description: 'A template for future MkDocs wikis'
+# +----------------------------------------------------------------------------------------------------+
+# |                                         PROJECT INFORMATION                                        |
+# |                                                                                                    |
+# | The below options are used to defined various things for the project touse and display such as the |
+# | Site name, Site author and canonical URL.                                                          |
+# | Note that ONLY the "site_name" is required with every other option being optional.                 |
+# |                                                                                                    |
+# | Read More:                                                                                         |
+# |   https://www.mkdocs.org/user-guide/configuration/#project-information                             |
+# |                                                                                                    |
+# | Settings:                                                                                          |
+# | - site_name                                                                                        |
+# |     The only required option for the mkdocs.yml file to be valid.                                  |
+# |     Defines the main title used for the documentation (i.e. within browser tabs or the docs page   |
+# |     depending on the theme used).                                                                  |
+# |                                                                                                    |
+# | - site_url                                                                                         |
+# |     Defines the canonical URL under which you can find the built documentation on the internet.    |
+# |     The URL will be used within a "link" meta tag with the "canonical" URL to the head section of  |
+# |     each HTML page.                                                                                |
+# |     Make sure to also include any subdirectories in the URL should your page be hosted under it.   |
+# |     If you're publishing the docs on GitHub while not using a custom domain or subdomain, common   |
+# |     URL formats are either https://<username>.github.io or https://<username>.github.io/<repo>     |
+# |                                                                                                    |
+# | - repo_url                                                                                         |
+# |     Defines the URL to the repository where you have the source of this documentation.             |
+# |     When set will provide a link to the repository on each page.                                   |
+# |     The URL may also be used with the "edit_uri" appendet to it to provide a edit link for a page. |
+# |                                                                                                    |
+# | - repo_name                                                                                        |
+# |     Defines the name to display for the "repo_url" link on each page.                              |
+# |                                                                                                    |
+# | - edit_uri                                                                                         |
+# |     The path from the repo_url to the docs directory.                                              |
+# |     As an example, setting "edit/master/docs/" as edit_uri while using                             |
+# |     https://github.com/Andre601/mkdocs-template will result in the URL                             |
+# |     https://github.com/Andre601/mkdocs-template/edit/master/docs/. Any page path will be appendet. |
+# |     An absolute URL can also be defined by just providing the full URL (with http(s)://).          |
+# |     For further customization (i.e. include file path in-between the edit path) use the            |
+# |     edit_uri_template option instead.                                                              |
+# |                                                                                                    |
+# | - edit_uri_template                                                                                |
+# |     DON'T SET THIS OPTION ALONGSIDE edit_uri. THEY ARE MUTUALLY EXCLUSIVE.                         |
+# |     Defines the path to the docs_dir in a repository which gets appended to the repo_url itself.   |
+# |     This option uses Python format String with the following options being available:              |
+# |       -  {path}      - The full path of a file relative to docs dir (i.e. foo/bar.md)              |
+# |       - {path_noext} - Same as {path} but without the file extension (i.e. foo/bar)                |
+# |     There is also a !q conversion flag available to percent-encode the path.                       |
+# |     For example, {path!q} may return foo%2Fbar.md                                                  |
+# |                                                                                                    |
+# | - site_description                                                                                 |
+# |     Defines the description of the site, which is included as a description meta tag in the        |
+# |     header.                                                                                        |
+# |                                                                                                    |
+# | - site_author                                                                                      |
+# |     Defines the site author which is included as a meta tag in the header.                         |
+# |                                                                                                    |
+# | - copyright                                                                                        |
+# |     Allows you to define the copyright of a site to be included by the theme.                      |
+# |     Depending on how a theme handles this option will it be treated as HTML, meaning you have to   |
+# |     consider cases of escaping certain content (i.e. < and >) and use specific shortcodes like     |
+# |     &copy; for the copyright symbol.                                                               |
+# |                                                                                                    |
+# | - remote_branch                                                                                    |
+# |     The remote target branch used by MkDocs to push the built docs towards when using gh-deploy.   |
+# |     For GitHub this usually should be gh-pages (The default).                                      |
+# |     This option can be overriden by a command line option.                                         |
+# |                                                                                                    |
+# | - remote_origin                                                                                    |
+# |     The name of the remote repository to push towards.                                             |
+# |     By default git names the remote "origin" which is also the default for MkDocs.                 |
+# |     This option can be overriden by a command line option.                                         |
+# |                                                                                                    |
+# +----------------------------------------------------------------------------------------------------+
+
+site_name: 'MkDocs Template'
+site_url: 'https://docs.andre601.ch/mkdocs-template'
+
+repo_url: 'https://github.com/Andre601/mkdocs-template'
+repo_name: 'Andre601/mkdocs-template'
+
+edit_uri: 'blob/master/docs/'
+#edit_uri_template: 'blob/master/docs/{path}' # Equal to edit_uri
+
+site_description: 'A template for creating MkDocs documentation.'
 site_author: 'Andre_601'
-#site_url: 'https://www.andre601.ch/mkdocs-template' # Uncomment to set a canonical URL
 
-# +--------------------------------------------------------------------------------------------------------+
-# |                                                                                                        |
-# | This setting allows you to define your own Copyright notice.                                           |
-# | The text is treated as HTML code so you can use things like <a> tags or &copy; to display the          |
-# | Copyright icon.                                                                                        |
-# |                                                                                                        |
-# | Where or IF the Copyright is displayed depends on the theme you use.                                   |
-# |                                                                                                        |
-# | Read More:                                                                                             |
-# | - https://www.mkdocs.org/user-guide/configuration/#copyright                                           |
-# |                                                                                                        |
-# +--------------------------------------------------------------------------------------------------------+
-copyright: |
-  &copy; Author
+copyright: '&copy; Andre_601' # The text is treated as HTML, so you have to escape certain characters.
 
-# +--------------------------------------------------------------------------------------------------------+
-# |                                                                                                        |
-# | The base folder to use.                                                                                |
-# | Any Markdown files you put into this folder will be turned into a static HTML page once you build or   |
-# | publish your page.                                                                                     |
-# |                                                                                                        |
-# | It is also used as the base directory for other settings like the "extra_css" or "extra_javascript"    |
-# | option.                                                                                                |
-# |                                                                                                        |
-# +--------------------------------------------------------------------------------------------------------+
-docs_dir: docs/
+remote_branch: 'gh-pages'
+remote_name: 'origin'
 
-
-# +--------------------------------------------------------------------------------------------------------+
-# |                                                                                                        |
-# | These options allow to define a Repository to link to.                                                 |
-# | The result will, depending on the theme, be a link somewhere shown on the page that links to the       |
-# | Repository with the specified repo_name.                                                               |
-# |                                                                                                        |
-# | This will also enable a "edit" button on the page itself that allows the direct editing of the page.   |
-# | You can disable this by setting "edit_uri" to an empty String.                                         |
-# |                                                                                                        |
-# | Read More:                                                                                             |
-# | - https://www.mkdocs.org/user-guide/configuration/#repo_name                                           |
-# | - https://www.mkdocs.org/user-guide/configuration/#repo_url                                            |
-# | - https://www.mkdocs.org/user-guide/configuration/#edit_uri                                            |
-# |                                                                                                        |
-# +--------------------------------------------------------------------------------------------------------+
-repo_name: Andre601/mkdocs-template
-repo_url: https://github.com/Andre601/mkdocs-template
-#edit_uri: tree/master/docs # Uncomment to define a different URI/URL for the "edit" option
-
-# +--------------------------------------------------------------------------------------------------------+
-# |                                                                                                        |
-# | The "nav" option is where you define the navigation to show in MkDocs.                                 |
-# |                                                                                                        |
-# | Depending on the theme you use will the resulting Navigation look different.                           |
-# |                                                                                                        |
-# | You can set different types of navigations. Either just the path, the path with a separate title or    |
-# | an external URL.                                                                                       |
-# |                                                                                                        |
-# | Read More:                                                                                             |
-# | - https://www.mkdocs.org/user-guide/configuration/#documentation-layout                                |
-# |                                                                                                        |
-# +--------------------------------------------------------------------------------------------------------+
+# +----------------------------------------------------------------------------------------------------+
+# |                                        DOCUMENTATION LAYOUT                                        |
+# |                                                                                                    |
+# | These are the settings used to define the overall layout of your documentation such as the         |
+# | navigation, what not to include in it or the build process itself and how MkDocs should react on   |
+# | encountering certain situation related to the nav and layout.                                      |
+# |                                                                                                    |
+# | Read More:                                                                                         |
+# |  https://www.mkdocs.org/user-guide/configuration/#documentation-layout                             |
+# |                                                                                                    |
+# | Settings:                                                                                          |
+# | - nav                                                                                              |
+# |     Defines the navigation to display in the configuration.                                        |
+# |     Multiple forms of formatting can be included here including the direct path to a file, the     |
+# |     path to a file prefixed by a title, a absolute URL or a section containing nested entries of   |
+# |     former mentioned options.                                                                      |
+# |                                                                                                    |
+# | - exclude_docs                                                                                     |
+# |     String option that defines files and folders relative to the docs_dir to exclude from when     |
+# |     building the effective docs (Running "mkdocs build" or "mkdocs gh-deploy").                    |
+# |     This option follows the .gitignore pattern format. Read more about it here:                    |
+# |     https://git-scm.com/docs/gitignore#_pattern_format                                             |
+# |                                                                                                    |
+# | - not_in_nav                                                                                       |
+# |     String option that defines files and folders that should be included within the built docs,    |
+# |     but not included within the navigation.                                                        |
+# |     This can/should mainly be used if you include files not defined in the nav setting and don't   |
+# |     want MkDocs to report these to you in the console.                                             |
+# |     This option follows the .gitignore pattern format. Read more about it here:                    |
+# |     https://git-scm.com/docs/gitignore#_pattern_format                                             |
+# |                                                                                                    |
+# | - validation                                                                                       |
+# |     Allows you to define how strict MkDocs should be during link validations for certain types.    |
+# |     Available options are "info", "warn" and "ignore".                                             |
+# |     Behaviours can be set specifically for nav-related links (ommited, not found or abs. links)    |
+# |     or for general links (not found, absolute links, unrecognized links).                          |
+# |     You can also only add the option itself without it being nested to nav or links, to have it be |
+# |     applied to both (Granted that this option exists in both, else only the one having it works).  |
+# |     Please read the docs for full info on alla available options:                                  |
+# |     https://www.mkdocs.org/user-guide/configuration/#validation                                    |
+# |                                                                                                    |
+# +----------------------------------------------------------------------------------------------------+
 nav:
-  - Welcome: index.md
+  - Home: index.md
+  - Themes:
+    - 'Material for MkDocs': 'themes/material.md'
 
-# +--------------------------------------------------------------------------------------------------------+
-# |                                                                                                        |
-# | The "theme" section allows you to define what theme to use.                                            |
-# | It is also used for theme-specific options, but also for advanced stuff such as theme-extensions, if   |
-# | the theme actually supports it.                                                                        |
-# |                                                                                                        |
-# | Read More:                                                                                             |
-# | - https://www.mkdocs.org/user-guide/configuration/#theme                                               |
-# |                                                                                                        |
-# +--------------------------------------------------------------------------------------------------------+
+#exclude_docs: |
+#  drafts/
+
+#validation:
+#  nav:
+#    absolute_links: ignore
+#  links:
+#    absolute_links: warn
+
+# +----------------------------------------------------------------------------------------------------+
+# |                                         BUILD DIRECTORIES                                          |
+# |                                                                                                    |
+# | Options to set the locations for the doc files and the built docs, but also for defining the       |
+# | theme, extra CSS and javascript files, extra template files and other extra options that may or    |
+# | may not be used by the theme, plugins, extensions, etc.                                            |
+# |                                                                                                    |
+# | Read More:                                                                                         |
+# |   https://www.mkdocs.org/user-guide/configuration/#build-directories                               |
+# |                                                                                                    |
+# | Settings:                                                                                          |
+# | - theme                                                                                            |
+# |     Section used to define the theme, the theme directory to extend/override the theme, the locale |
+# |     and more.                                                                                      |
+# |     This section currently supports the following settings:                                        |
+# |       - name:                      The name of the theme. MkDocs offers two built-in themes,       |
+# |                                    MkDocs and ReadTheDocs.                                         |
+# |                                    Other themes need to first be installed. You can use            |
+# |                                    "mkdocs get-deps" to install them automatically. This requires  |
+# |                                    them to be present in MkDocs Catalogue repository which can be  |
+# |                                    found here:                                                     |
+# |                                    https://github.com/mkdocs/catalog                               |
+# |       - locale:                    Sets the site locale to be used. Whether the locale is          |
+# |                                    supported by your theme depends on said theme.                  |
+# |       - custom_dir:                Directory containing a custom theme. Can be a path relative to  |
+# |                                    the configuration file, or an absolute path relative to the     |
+# |                                    root of your local file system.                                 |
+# |                                    This can also be used to extend and override the theme you're   |
+# |                                    using by adding or overriding files, partials, etc.             |
+# |       - static_template:           List of template files to render as a static page.              |
+# |                                    File must be located either in the theme's template directory   |
+# |                                    or the custom_dir directory.                                    |
+# |       - <theme specific keywords>: Themes can add their own keywords to use in the configuration.  |
+# |                                    Check your theme's documentation for more info.                 |
+# |                                                                                                    |
+# | - docs_dir                                                                                         |
+# |     Defines the directory which holds the files to use for building the documentation.             |
+# |     This can be a path relative to the configuration file, or an absolute path relative to your    |
+# |     local file system.                                                                             |
+# |     Also, MkDocs will include almost any file (with certain exceptions) from the docs dir unless   |
+# |     they are prefixed with a dot (i.e. .something.md).                                             |
+# |                                                                                                    |
+# | - site_dir                                                                                         |
+# |     Defines the directory where the built documentation should be put when using "mkdocs build".   |
+# |     Just like docs_dir can this be a relative or absolute path.                                    |
+# | - extra_css                                                                                        |
+# |     Allows you to set a list of paths (relative to docs_dir) or URLs to CSS files that should be   |
+# |     used by MkDocs.                                                                                |
+# | - extra_javascript                                                                                 |
+# |     Allows you to set a list of paths (relative to docs_dir) or URLs to Javascript files that      |
+# |     should be used by MkDocs.                                                                      |
+# |     Since v1.5 of MkDocs can you also define multiple config keys to define additional attributes, |
+# |     namely:                                                                                        |
+# |       - type: <string>                                                                             |
+# |       - async: <boolean>                                                                           |
+# |       - defer: <boolean>                                                                           |
+# |                                                                                                    |
+# +----------------------------------------------------------------------------------------------------+
+
 theme:
-
-  # +------------------------------------------------------------------------------------------------------+
-  # |                                                                                                      |
-  # | The "name" option is where you define the theme to use.                                              |
-  # |                                                                                                      |
-  # | Note that not all themes are included by default and will require you to install them first.         |
-  # | The Material theme is one of them. See the "Read More" link for instructions on how to install it.   |
-  # |                                                                                                      |
-  # | Read More:                                                                                           |
-  # | - https://squidfunk.github.io/mkdocs-material/getting-started/                                       |
-  # |                                                                                                      |
-  # +------------------------------------------------------------------------------------------------------+
-  name: 'material'
-  
-  # +------------------------------------------------------------------------------------------------------+
-  # |                                                                                                      |
-  # | The Material theme allows "theme-extsnions", meaning that you can override parts of it by either     |
-  # | overriding a particular file, or only parts (blocks) of it.                                          |
-  # |                                                                                                      |
-  # | If you want to override parts of Material, uncomment the "custom_dir" option below and set the       |
-  # | folder (relative to the mkdocs.yml file) where your theme extensions will be located at.             |
-  # |                                                                                                      |
-  # | Read More:                                                                                           |
-  # | - https://www.mkdocs.org/user-guide/configuration/#custom_dir                                        |
-  # | - https://squidfunk.github.io/mkdocs-material/customization/#extending-the-theme                     |
-  # |                                                                                                      |
-  # +------------------------------------------------------------------------------------------------------+
+  name: 'mkdocs'
+  #locale: 'de'
   #custom_dir: 'theme'
-  
-  # +------------------------------------------------------------------------------------------------------+
-  # |                                                                                                      |
-  # | The "favicon" option allows you to set your own image/icon to use in the browser-tab.                |
-  # |                                                                                                      |
-  # | Pretty much all image types are supported, but it's recommended to use a PNG, SVG or ICO image for   |
-  # | the favicon.                                                                                         |
-  # |                                                                                                      |
-  # | The directory is relative to the "docs_dir".                                                         |
-  # |                                                                                                      |
-  # | Example: Having a favicon.png in docs/assets/images will result in the "favicon" setting showing     |
-  # |          'assets/images/favicon.png'                                                                 |
-  # |                                                                                                      |
-  # | Read More:                                                                                           |
-  # | - https://squidfunk.github.io/mkdocs-material/setup/changing-the-logo-and-icons/#favicon             |
-  # |                                                                                                      |
-  # +------------------------------------------------------------------------------------------------------+
-  #favicon: 'assets/images/favicon.png'
-  
-  # +------------------------------------------------------------------------------------------------------+
-  # |                                                                                                      |
-  # | The "palette" section is a Material option and allows you to define specific style options such as   |
-  # | Color-Scheme, and primary and secondary Color.                                                       |
-  # |                                                                                                      |
-  # | You can also define multiple palettes that can have different Color Schemses and primary and/or      |
-  # | secondary Colors.                                                                                    |
-  # |                                                                                                      |
-  # | Read More:                                                                                           |
-  # | - https://squidfunk.github.io/mkdocs-material/setup/changing-the-colors/                             |
-  # | - https://squidfunk.github.io/mkdocs-material/setup/changing-the-colors/#color-palette-toggle        |
-  # |                                                                                                      |
-  # +------------------------------------------------------------------------------------------------------+
-  palette:
-  
-    # +----------------------------------------------------------------------------------------------------+
-    # |                                                                                                    |
-    # | The "scheme" option is used to define the Color Scheme used by Material.                           |
-    # |                                                                                                    |
-    # | Material offers a "default" and a "slate" scheme. "default" is obviously the default (bright)      |
-    # | Color scheme while "slate" is the native dark theme from Material.                                 |
-    # |                                                                                                    |
-    # | Read More:                                                                                         |
-    # | - https://squidfunk.github.io/mkdocs-material/setup/changing-the-colors/#color-scheme              |
-    # |                                                                                                    |
-    # +----------------------------------------------------------------------------------------------------+
-    scheme: 'slate'
-    
-    # +----------------------------------------------------------------------------------------------------+
-    # |                                                                                                    |
-    # | "primary" is used to set the main color of the Material Theme.                                     |
-    # |                                                                                                    |
-    # | The primary color is used on the top banner of the page but also for things like the link color.   |
-    # |                                                                                                    |
-    # | Read More:                                                                                         |
-    # | - https://squidfunk.github.io/mkdocs-material/setup/changing-the-colors/#primary-color             |
-    # |                                                                                                    |
-    # +----------------------------------------------------------------------------------------------------+
-    primary: 'indigo'
-    
-    # +----------------------------------------------------------------------------------------------------+
-    # |                                                                                                    |
-    # | The "accent" is used for moments such as hovering over links.                                      |
-    # |                                                                                                    |
-    # | Read More:                                                                                         |
-    # | - https://squidfunk.github.io/mkdocs-material/setup/changing-the-colors/#accent-color              |
-    # |                                                                                                    |
-    # +----------------------------------------------------------------------------------------------------+
-    accent: 'indigo'
-    
-  # +------------------------------------------------------------------------------------------------------+
-  # |                                                                                                      |
-  # | With the "font" option can you set a different font to use.                                          |
-  # |                                                                                                      |
-  # | Material supports all Google fonts, but you can also define your own ones if you choose so.          |
-  # |                                                                                                      |
-  # | The "text" option is used for the regular font while "code" is used for code blocks, inline code and |
-  # | similar.                                                                                             |
-  # |                                                                                                      |
-  # | Read More:                                                                                           |
-  # | - https://squidfunk.github.io/mkdocs-material/setup/changing-the-fonts/                              |
-  # |                                                                                                      |
-  # +------------------------------------------------------------------------------------------------------+
-  #font:
-  #  text: 'Roboto'
-  #  code: 'Roboto Mono'
-  
-  # +------------------------------------------------------------------------------------------------------+
-  # |                                                                                                      |
-  # | Material suppors more than 40 different languages which you can set using the "language" option      |
-  # | below.                                                                                               |
-  # |                                                                                                      |
-  # | The default language is "en" (English).                                                              |
-  # |                                                                                                      |
-  # | You can also enable/set a "selector" to allow switching between languages.                           |
-  # | See the "alternate" option in the "extra" section below for more information on this topic.          |
-  # |                                                                                                      |
-  # | Read More:                                                                                           |
-  # | - https://squidfunk.github.io/mkdocs-material/setup/changing-the-language/                           |
-  # |                                                                                                      |
-  # +------------------------------------------------------------------------------------------------------+
-  #language: 'en'
-  
-  # +------------------------------------------------------------------------------------------------------+
-  # |                                                                                                      |
-  # | The "direction" option is commonly used together with the "language" option.                         |
-  # |                                                                                                      |
-  # | It allows you to change the text direction from the default left-to-right (ltr) to right-to-left     |
-  # | (rtl) which is used in certain languages.                                                            |
-  # |                                                                                                      |
-  # | Read More:                                                                                           |
-  # | - https://squidfunk.github.io/mkdocs-material/setup/changing-the-language/#directionality            |
-  # |                                                                                                      |
-  # +------------------------------------------------------------------------------------------------------+
-  #direction: 'ltr'
-  
-  # +------------------------------------------------------------------------------------------------------+
-  # |                                                                                                      |
-  # | The "features" option allows you to enable specific features of Material, by adding them to the      |
-  # | list.                                                                                                |
-  # |                                                                                                      |
-  # | Features are in the format <category>.<name>. As an example, the feature to enable tabs is called    |
-  # | navigation.tabs.                                                                                     |
-  # |                                                                                                      |
-  # | The list below contains all known features of Material.                                              |
-  # |                                                                                                      |
-  # | Features marked with a * are currently Insiders-only. (Last update: 11th December 2021)              |
-  # | https://squidfunk.github.io/mkdocs-material/insiders/                                                |
-  # |                                                                                                      |
-  # | Read More:                                                                                           |
-  # | - https://squidfunk.github.io/mkdocs-material/setup/setting-up-navigation/                           |
-  # |                                                                                                      |
-  # +------------------------------------------------------------------------------------------------------+
-  features:
-  # Announce
-  #
-  #- announce.dismiss # Adds a "X" button to dismiss a news banner/mark it as read.*
-  
-  # Header
-  #
-  #- header.autohide # Hide header when user scrolls past a specific point.
-  
-  # Navigation:
-  #
-  #- navigation.expand      # Expand all collapsable sections.
-  #- navigation.instant     # Instant loading pages.
-  #- navigation.indexes     # Attach pages directly to Sections. Incompatible with "toc.integrate"
-  #- navigation.sections    # Render top sections as groups.
-  - navigation.tabs         # Render top sections as tabs at the top.
-  #- navigation.tabs.sticky # Tabs won't disappear when scrolling down. Requires "navigation.tabs".
-  #- navigation.top         # Adds a "Back to top" that is shown when scrolling up.
-  #- navigation.tracking    # Updates the url with highlighted section anchor.
-  
-  # Search
-  #
-  #- search.highlight # Search will highlight the searched word(s) on the page.*
-  #- search.share     # Adds an option to share a search query link.*
-  #- search.suggest   # Search will suggest the likeliest completion for a word.*
-  
-  # Table of Contents
-  #
-  #- toc.integrate          # Include the TOC sections in the left navugation.
-  
-  # +------------------------------------------------------------------------------------------------------+
-  # |                                                                                                      |
-  # | The "icon" section allows you to define a icon to use for the logo and/or repository.                |
-  # |                                                                                                      |
-  # | To use already available icons will you need to set the right path for it, depending on which you    |
-  # | want to use.                                                                                         |
-  # |                                                                                                      |
-  # | Available icons:                                                                                     |
-  # | - FontAwesome                                                                                        |
-  # |   - Brands:  fontawesome/brands/...  (https://fontawesome.com/icons?d=gallery&p=2&s=brands&m=free)   |
-  # |   - Regular: fontawesome/regular/... (https://fontawesome.com/icons?d=gallery&p=2&s=regular&m=free)  |
-  # |   - Solid:   fontawesome/solid/...   (https://fontawesome.com/icons?d=gallery&p=2&s=solid&m=free)    |
-  # |                                                                                                      |
-  # | - Material Design Icons: material/... (https://materialdesignicons.com/)                             |
-  # |                                                                                                      |
-  # | - Octicons: octicons/... (https://primer.style/octicons/)                                            |
-  # |                                                                                                      |
-  # | You can also define your own Image for the logo. To do that, remove the "logo" option from "icon"    |
-  # | instead add a "logo" option on the same level as the "icon" one, where you then set the path         |
-  # | (relative to the "docs_dir") to the icon to use. Supported are all images types, including SVG.      |
-  # |                                                                                                      |
-  # | Read More:                                                                                           |
-  # | - https://squidfunk.github.io/mkdocs-material/setup/changing-the-logo-and-icons/#logo                |
-  # |                                                                                                      |
-  # +------------------------------------------------------------------------------------------------------+
-  icon:
-    logo: 'material/library'
-    repo: 'material/library'
-  
-  # +------------------------------------------------------------------------------------------------------+
-  # |                                                                                                      |
-  # | The "admonition" option allows you to set a different icon for each admonition type.                 |
-  # |                                                                                                      |
-  # | This is currently a Insiders-only feature. (Last update: 7th October 2021)                           |
-  # | https://squidfunk.github.io/mkdocs-material/insiders/                                                |
-  # |                                                                                                      |
-  # | Supported are all bundled icons:                                                                     |
-  # | - FontAwesome                                                                                        |
-  # |   - Brands:  fontawesome/brands/...  (https://fontawesome.com/icons?d=gallery&p=2&s=brands&m=free)   |
-  # |   - Regular: fontawesome/regular/... (https://fontawesome.com/icons?d=gallery&p=2&s=regular&m=free)  |
-  # |   - Solid:   fontawesome/solid/...   (https://fontawesome.com/icons?d=gallery&p=2&s=solid&m=free)    |
-  # |                                                                                                      |
-  # | - Material Design Icons: material/... (https://materialdesignicons.com/)                             |
-  # |                                                                                                      |
-  # | - Octicons: octicons/... (https://primer.style/octicons/)                                            |
-  # |                                                                                                      |
-  # | You can also create and use your own icons. See the documentation for more information.              |
-  # |                                                                                                      |
-  # | Read More:                                                                                           |
-  # | - https://squidfunk.github.io/mkdocs-material/reference/admonitions/#changing-the-icons              |
-  # |                                                                                                      |
-  # +------------------------------------------------------------------------------------------------------+
-  #admonition:
-  #    note: 'octicons/tag-16'
-  #    abstract: 'octicons/checklist-16'
-  #    info: 'octicons/info-16'
-  #    tip: 'octicons/squirrel-16'
-  #    success: 'octicons/check-16'
-  #    question: 'octicons/question-16'
-  #    warning: 'octicons/alert-16'
-  #    failure: 'octicons/x-circle-16'
-  #    danger: 'octicons/zap-16'
-  #    bug: 'octicons/bug-16'
-  #    example: 'octicons/beaker-16'
-  #    quote: 'octicons/quote-16'
+  #static_template: ''
 
-# +--------------------------------------------------------------------------------------------------------+
-# |                                                                                                        |
-# | With the "extra_css" option can you add your own (S)CSS files to enhance the documentation.            |
-# |                                                                                                        |
-# | The path to the file is relative to the "docs_dir".                                                    |
-# |                                                                                                        |
-# | Read More:                                                                                             |
-# | - https://www.mkdocs.org/user-guide/configuration/#extra_css                                           |
-# |                                                                                                        |
-# +--------------------------------------------------------------------------------------------------------+
-#extra_css:
 
-# +--------------------------------------------------------------------------------------------------------+
-# |                                                                                                        |
-# | Similar to the "extra_css" option does the "extra_javascript" option allow you to set custom JS files  |
-# | to add extra featurues.                                                                                |
-# |                                                                                                        |
-# | The path to the file is relative to the "docs_dir".                                                    |
-# |                                                                                                        |
-# | Read More:                                                                                             |
-# | - https://www.mkdocs.org/user-guide/configuration/#extra_javascript                                    |
-# |                                                                                                        |
-# +--------------------------------------------------------------------------------------------------------+
-#extra_javascript:
 
-# +--------------------------------------------------------------------------------------------------------+
-# |                                                                                                        |
-# | The "extra" section contains pretty much anything you want, as long as it is a valid key-value pair.   |
-# |                                                                                                        |
-# | Material uses this section for different custom settings that wouldn't fit in the theme section.       |
-# |                                                                                                        |
-# | Read More:                                                                                             |
-# | - https://www.mkdocs.org/user-guide/configuration/#extra                                               |
-# |                                                                                                        |
-# +--------------------------------------------------------------------------------------------------------+
-extra:
-  # +------------------------------------------------------------------------------------------------------+
-  # |                                                                                                      |
-  # | The social section allows you to set a list of entries which would be displayed in the footer of the |
-  # | page.                                                                                                |
-  # |                                                                                                      |
-  # | Each entry has the exact same options:                                                               |
-  # | - icon: Path to the SVG icon to use. See "icon" section for available icon sets.                     |
-  # | - link: URL to which the icon should link.                                                           |
-  # | - name: Optional Name that would be displayed as title on hover.                                     |
-  # |                                                                                                      |
-  # | Read More:                                                                                           |
-  # | - https://squidfunk.github.io/mkdocs-material/setup/setting-up-the-footer/#social-links              |
-  # |                                                                                                      |
-  # +------------------------------------------------------------------------------------------------------+
-  social:
-    - icon: 'fontawesome/brands/github'
-      link: 'https://github.com/Andre601/mkdocs-template'
-  
-  # +------------------------------------------------------------------------------------------------------+
-  # |                                                                                                      |
-  # | Allows you to hide the "Made with Material for MkDocs" text in the footer of the pages by setting    |
-  # | this to "true".                                                                                      |
-  # |                                                                                                      |
-  # | Read More:                                                                                           |
-  # | - https://squidfunk.github.io/mkdocs-material/setup/setting-up-the-footer/#generator-notice          |
-  # |                                                                                                      |
-  # +------------------------------------------------------------------------------------------------------+
-  #generator: true
-  
-  # +------------------------------------------------------------------------------------------------------+
-  # |                                                                                                      |
-  # | The "manifest" option allows you to define a .manifest file to use.                                  |
-  # |                                                                                                      |
-  # | A .manifest file makes the doc act like a web-application and tells it how to behave when installed. |
-  # |                                                                                                      |
-  # | Read More:                                                                                           |
-  # | - https://squidfunk.github.io/mkdocs-material/reference/meta-tags/#adding-a-web-app-manifest         |
-  # |                                                                                                      |
-  # +------------------------------------------------------------------------------------------------------+
-  #manifest: manifest.webmanifest
-  
-  # +------------------------------------------------------------------------------------------------------+
-  # |                                                                                                      |
-  # | The "alternate" option can be used to create a selector to switch languages.                         |
-  # |                                                                                                      |
-  # | Using this requires you to create a specific, more complicated MkDocs setup.                         |
-  # |                                                                                                      |
-  # | A Setup Guide for multi-language docs can be found here:                                             |
-  # | https://github.com/squidfunk/mkdocs-material/discussions/2346                                        |
-  # |                                                                                                      |
-  # | Read More:                                                                                           |
-  # | - https://squidfunk.github.io/mkdocs-material/setup/changing-the-language/#site-language-selector    |
-  # |                                                                                                      |
-  # +------------------------------------------------------------------------------------------------------+
-  #alternate:
 
-# +--------------------------------------------------------------------------------------------------------+
-# |                                                                                                        |
-# | MkDocs allows the usage of Markdown extensions which can do various things.                            |
-# |                                                                                                        |
-# | Material includes the pymdownx extension which provides a lot of useful features to use.               |
-# |                                                                                                        |
-# | Note that some extensions may use specific settings that you need to set.                              |
-# | Please check out the official documentation of PyMdownx for more information:                          |
-# | https://facelessuser.github.io/pymdown-extensions/                                                     |
-# |                                                                                                        |
-# | Material already provides required CSS and JS values for the PyMdownX Extensions, which means you do   |
-# | not need to set them up yourself.                                                                      |
-# |                                                                                                        |
-# | Read More:                                                                                             |
-# | - https://www.mkdocs.org/user-guide/configuration/#markdown_extensions                                 |
-# |                                                                                                        |
-# +--------------------------------------------------------------------------------------------------------+
-markdown_extensions:
-  - markdown.extensions.admonition:
-  - markdown.extensions.codehilite:
-      guess_lang: false
-  - markdown.extensions.toc:
-      permalink: true
-  #- pymdownx.arithmex:
-  #- pymdownx.b64:
-  #- pymdownx.betterem:
-  #- pymdownx.caret:
-  #- pymdownx.critic:
-  #- pymdownx.details:
-  #- pymdownx.emoji:
-  #- pymdownx.escapeall:
-  #- pymdownx.extra:
-  #- pymdownx.extrarawhtml:
-  #- pymdownx.highlight:
-  #- pymdownx.inlinehilite:
-  #- pymdownx.keys:
-  #- pymdownx.magiclink:
-  #- pymdownx.mark:
-  #- pymdownx.pathconverter:
-  #- pymdownx.progressbar:
-  #- pymdownx.smartsymbols:
-  #- pymdownx.snippets:
-  #- pymdownx.striphtml:
-  #- pymdownx.superfences:
-  #- pymdownx.tabbed:
-  #- pymdownx.tasklist:
-  #- pymdownx.tilde:
